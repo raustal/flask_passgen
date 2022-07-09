@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="main">
+        <h1>Welcome to the Password Generator</h1>
+        <form class="form" action="{{ url_for("index") }}" method="POST">
+            {{ form.csrf_token }}
+
+            <b>{{ form.password_length.label }}:</b> {{ form.password_length }}
+            {{ form.submit(class="btn btn-primary btn-lg px-4") }}
+        </form>
+        <div class="">
+        {% if mypassword %}
+            <h2>Your Password</h2>
+            <div class="password-display">
+                <hr>
+                <h3 class="password" id="copy">{{ mypassword }}</h3>
+                <button type="button" onclick="copyToClipboard('copy')">Copy</button>
+                <hr>
+            </div>
+                <div class="stats">
+                    <p>Passoword Length <b>{{ mypassword|length }}</b> characters</p>
+                </div>
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}

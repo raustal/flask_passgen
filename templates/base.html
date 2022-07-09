@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="/static/flaskgen.css">
+    <script src="/static/flaskgen.js"></script>
+
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>PassGen</title>
+    {% endif %}
+    <title>Title</title>
+
+</head>
+<body>
+{% block content %}
+{% endblock %}
+<footer class="footer">
+    <p>Created By: <a href="https://twitter.com/raustal" target="_blank">Raustal</a></p>
+</footer>
+</body>
+</html>
